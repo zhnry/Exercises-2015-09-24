@@ -17,18 +17,28 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Scanner in = new Scanner(System.in);
-      int g1 = 0;
-      int g2 = 0;
-  
+        Scanner keyboard;
+        int grade;
+        int count = 0;
+        float total = 0;
 
-      System.out.print("Enter your first grade:");
-      g1 = in.nextInt();
-      
-      System.out.print("Enter your second grade: ");
-      g2 = in.nextInt();
-      
-      System.out.print((g1+g2)/2);
+        keyboard = new Scanner(System.in);
+
+        // infinite loop
+        for (;;) {
+            System.out.print("Enter a grade: ");
+            grade = keyboard.nextInt();
+            count++;
+            if (grade == -1) {
+                break;
+            }
+            total += grade;
+
+        }
+
+        System.out.println("count: " + count);
+        System.out.println("grade: " + grade);
+        System.out.println("total: " + grade / count);
+
     }
-    
 }
